@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import NavBarVivalinda from './ components/NavBarVivalinda' 
+import Footer from './ components/Footer'
 import './App.css';
+import logPhotos from './instagram'
 
-class App extends Component {
+class AppPhoto extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        value: []
+    };
+}
+componentDidMount() {
+    this.props.promise.then(value => {
+        this.setState({value});
+    });
+}
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <>
+      <NavBarVivalinda/>
+      <div className="row no-gutters photoContainer">
+          {
+           this.state.value.map( ( item, i ) =>  { 
+             return (
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i} >
+                <img className="photoCard"   alt="" src={item} />
+             </div>
+           )
+           })
+         }
       </div>
-    );
+      <Footer />
+      </>
+    )
   }
 }
+
+const App = () => <div><AppPhoto promise={logPhotos()} /></div>
 
 export default App;
