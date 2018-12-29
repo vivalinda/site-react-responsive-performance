@@ -37,14 +37,14 @@ export default class NavBarVivalinda extends React.Component {
                height="auto"
                />
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarToggler id="button1" aria-label="Botão Menu" aria-pressed="false" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Parcerias</NavLink>
+                <NavLink id="link1" role="link" aria-label="Parcerias" aria-labelledby="link1" href="/components/">Parcerias</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://fb.com/vivalindaoficial">Fraquias</NavLink>
+                <NavLink id="link2" role="link" aria-label="Franquias" aria-labelledby="link2"  href="https://fb.com/vivalindaoficial">Franquias</NavLink>
               </NavItem>
               <NavItem>
               </NavItem>

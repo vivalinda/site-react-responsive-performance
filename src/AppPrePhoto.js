@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class AppPhoto extends Component {
+class AppPrePhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +10,7 @@ class AppPhoto extends Component {
 }
 componentDidMount() {
     this.props.promise.then(value => {
-        this.setState({ value });
+        this.setState({value});
     });
 }
 
@@ -33,4 +33,4 @@ componentDidMount() {
   }
 }
 
-export default AppPhoto;
+export default AppPrePhoto;
