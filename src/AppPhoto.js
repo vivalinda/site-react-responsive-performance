@@ -12,7 +12,8 @@ componentDidMount() {
     this.props.promise.then(value => {
         this.setState({ value });
     });
-}
+  }
+
 
   render() {
     return (
