@@ -13,15 +13,15 @@ Using to improve performance
 ## Last Deployment Perfomance
 
 ### Lighthouse
-Performance 86 - Improvements do Do
-Progressive Web App 100
-Accessibility 100
-Accessibility
-Best Practices 86* - Fix Manifest Images 
-SEO 100
+* Performance 86 - Improvements do Do
+* Progressive Web App 100
+* Accessibility 100
+* Accessibility
+* Best Practices 86* - Fix Manifest Images 
+* SEO 100
 
 *now.sh is serving http/1.1 ( I can fix it when using the Real Domain and reach 100)
 
-
-
-
+### WebPageTest 
+#### All Requisites - A
+https://www.webpagetest.org/result/181229_FC_2cf48fa143ddf53dd4ea2af612dd3295/
