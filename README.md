@@ -2,7 +2,7 @@
 Created using create-react-app and ReactStrap
 
 ### Last Deployment:
-https://create-react-app-doixn7hhg.now.sh
+https://create-react-app-ifzys4c4m.now.sh/
 
 ## React Lazy & Suspense
 Using to improve performance
@@ -13,15 +13,17 @@ Using to improve performance
 ## Last Deployment Perfomance
 
 ### Lighthouse
-* Performance 86 - Improvements do Do
+* Performance 92 - Cache for Scripts loaded from other sites, Defer rendering photos not on screen
 * Progressive Web App 100
 * Accessibility 100
 * Accessibility
 * Best Practices 86* - Fix Manifest Images 
 * SEO 100
+![alt text](https://github.com/vivalinda/site-react-responsive-performance/blob/master/peformance.png)
 
 *now.sh is serving http/1.1 ( I can fix it when using the Real Domain and reach 100)
 
 ### WebPageTest 
-#### All Requisites - A
-https://www.webpagetest.org/result/181229_FC_2cf48fa143ddf53dd4ea2af612dd3295/
+https://www.webpagetest.org/result/190102_Q3_4945e310095af73a0ddcf6010e8a301a/
+![alt text](https://github.com/vivalinda/site-react-responsive-performance/blob/master/peformanceweb.png)
+
