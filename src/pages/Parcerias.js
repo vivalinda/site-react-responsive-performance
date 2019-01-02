@@ -77,7 +77,7 @@ export default class Parcerias extends React.Component {
           <Input type="text"  id="otherSocialParceira" placeholder="Outras Mídias" value={ this.state.template_params.otherSocial } onChange={ this.handleOtherSocial } />
         </FormGroup>
         <FormGroup>
-          <Input type="textarea" id="messageParceira" placeholder="Como você entende que essa parceria pode ser benéfica para as partes e o que você espera dela?"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
+          <Input type="textarea" id="messageParceira" placeholder="Como essa parceria pode ser benéfica para as partes e o que você espera dela?"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
         </FormGroup>
         <FormGroup>
           <Input type="text" id="contatoParceira" placeholder="Contato"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
