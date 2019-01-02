@@ -1,0 +1,27 @@
+body{
+  background-color: #212121;
+}
+
+.formAir {
+  background: transparent; 
+}
+
+.parceriasContainer {
+  padding: 77px 4% 10% 4% ;
+  color: white;
+  text-align: center;
+}
+
+h4 {
+  margin: 8px;
+  justify-self: center;
+}
+
+h6 {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  margin-bottom: 20px;
+}

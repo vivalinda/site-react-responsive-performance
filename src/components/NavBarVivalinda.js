@@ -9,6 +9,8 @@ import {
   NavLink
   } from 'reactstrap';
   import logo from '../static/logo.svg'
+  import { LinkContainer } from "react-router-bootstrap";
+  import './NavBarVivalinda.css'
 
 export default class NavBarVivalinda extends React.Component {
   constructor(props) {
@@ -40,14 +42,16 @@ export default class NavBarVivalinda extends React.Component {
           <NavbarToggler id="button1" aria-label="Botão Menu" aria-pressed="false" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink id="link1" role="link" aria-label="Parcerias" aria-labelledby="link1" href="/components/">Parcerias</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink id="link2" role="link" aria-label="Franquias" aria-labelledby="link2"  href="https://fb.com/vivalindaoficial">Franquias</NavLink>
-              </NavItem>
-              <NavItem>
-              </NavItem>
+            <LinkContainer  to="/">
+                <NavItem>
+                <NavLink  id="link1" role="link" aria-label="Home" aria-labelledby="link1" href="" >Home</NavLink>
+                </NavItem>
+              </LinkContainer>
+              <LinkContainer  to="/parcerias">
+                <NavItem>
+                <NavLink  id="link2" role="link" aria-label="Parcerias" aria-labelledby="link2" href="" >Parcerias</NavLink>
+                </NavItem>
+              </LinkContainer>
             </Nav>
           </Collapse>
         </Navbar>
@@ -55,3 +59,9 @@ export default class NavBarVivalinda extends React.Component {
     );
   }
 }
+
+ /* <LinkContainer  to="/parcerias">
+    <NavItem>
+    <NavLink  id="link3" role="link" aria-label="Franquias" aria-labelledby="link3" href="">Franquias</NavLink>
+    </NavItem>
+  </LinkContainer> */

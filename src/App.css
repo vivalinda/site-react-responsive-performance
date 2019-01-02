@@ -1,10 +1,6 @@
 .App {
   text-align: center;
 }
-.navme{
-  background-color: #212121;
-  opacity: 0.8;
-}
 
 .logo {
   margin-left: calc( 30px + 5% );
@@ -24,8 +20,4 @@ body{
   height: 100%;
   padding: 3%;
   border-radius: 7%;
-}
-
-.navbar-light .navbar-brand {
-  color: white;
 }

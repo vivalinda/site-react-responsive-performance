@@ -1,16 +1,15 @@
 import React, { Suspense } from 'react';
 import NavBarVivalinda from './components/NavBarVivalinda' 
-import logPhotos from './instagram'
-const AppPhoto = React.lazy( () => import( './AppPhoto' ))
+const Parcerias = React.lazy( () => import( './pages/Parcerias' ))
 const Footer = React.lazy( () => import( './components/Footer' ))
 
-const App = () => {
+const AppWithForm = () => {
 
   return(
     <>
       <NavBarVivalinda/>
       <Suspense fallback={<div>...</div>} >
-         <AppPhoto promise={logPhotos(12)} />
+         <Parcerias />
       </Suspense>
       <Suspense fallback={<div>...</div>} >
         <Footer />
@@ -19,4 +18,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default AppWithForm;
