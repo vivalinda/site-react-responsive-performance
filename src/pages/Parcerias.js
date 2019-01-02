@@ -80,7 +80,7 @@ export default class Parcerias extends React.Component {
           <Input type="textarea" id="messageParceira" placeholder="Como essa parceria pode ser benéfica para as partes e o que você espera dela?"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
         </FormGroup>
         <FormGroup>
-          <Input type="text" id="contatoParceira" placeholder="Contato"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
+          <Input type="text" id="contatoParceira" placeholder="Contato"  value={ this.state.template_params.contato } onChange={ this.handleContato } />
         </FormGroup>
         <Button onClick={ this.handleData } block>Enviar</Button>
       </Form>
