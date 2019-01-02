@@ -19,11 +19,11 @@ Using to improve performance
 * Accessibility
 * Best Practices 86* - Fix Manifest Images 
 * SEO 100
-![alt text](https://raw.githubusercontent.com/vivalinda/site-react-responsive-performance/blob/master/peformance.png)
+![alt text](https://raw.githubusercontent.com/vivalinda/site-react-responsive-performance/master/peformance.png)
 
 *now.sh is serving http/1.1 ( I can fix it when using the Real Domain and reach 100)
 
 ### WebPageTest 
 https://www.webpagetest.org/result/190102_Q3_4945e310095af73a0ddcf6010e8a301a/
-![alt text](https://raw.githubusercontent.com/vivalinda/site-react-responsive-performance/blob/master/peformanceweb.png)
+![alt text](https://raw.githubusercontent.com/vivalinda/site-react-responsive-performance/master/peformanceweb.png)
 
