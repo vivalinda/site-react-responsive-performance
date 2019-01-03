@@ -908,6 +908,11 @@
     "@svgr/core" "^2.4.1"
     loader-utils "^1.1.0"
 
+"@types/prop-types@^15.5.3":
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.8.tgz#8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce"
+  integrity sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -7904,6 +7909,14 @@ react-app-polyfill@^0.2.0:
     raf "3.4.0"
     whatwg-fetch "3.0.0"
 
+react-deco@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-deco/-/react-deco-0.7.0.tgz#429904968240bc85f3c6b232c27aefda00e9512d"
+  integrity sha512-49YZJY/k9gSa3R6KrBxXEaGjk1xJky5kH9o5FMEE2zes8xrUqQx7aBwAxqvXSK9Pgck7r6zioRqbYY2JzHchdQ==
+  dependencies:
+    "@types/prop-types" "^15.5.3"
+    prop-types "^15.6.2"
+
 react-dev-utils@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-7.0.0.tgz#b99d87aea260294bf7ea087cdbd6b099fac3eb27"
@@ -7961,6 +7974,15 @@ react-popper@^0.10.4:
   dependencies:
     popper.js "^1.14.1"
     prop-types "^15.6.1"
+
+react-progressive-loader@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-progressive-loader/-/react-progressive-loader-0.2.0.tgz#50f97c420bea84201481dc7b89fcb3d0b31b4736"
+  integrity sha512-GAZBegbbQeNzoGsTozIPxsmBwUCHEIqdZ0oIj5a3O5tSQMppqroC4r8HCoN/bryUMIsasN/0c9pI60yKQtrRWA==
+  dependencies:
+    "@types/prop-types" "^15.5.3"
+    prop-types "^15.6.2"
+    react-deco "^0.7.0"
 
 react-router-bootstrap@^0.24.4:
   version "0.24.4"

@@ -20,18 +20,19 @@ componentDidMount() {
       <>
       <div className="row no-gutters photoContainer">
           {
-           this.state.value.map( ( item, i ) =>  { 
-             return (
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i} >
+          this.state.value.map( ( item, i ) =>  { 
+            return (
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i} >
                   <img className="photoCard"   alt="" src={item} />
               </div>
-           )
-           })
-         }
+          )
+          })
+        }
       </div>
       </>
     )
   }
 }
+
 
 export default AppPhoto;

@@ -25,3 +25,12 @@ h6 {
 input, textarea {
   margin-bottom: 30px;
 }
+
+p {
+  margin-top: 20px;
+}
+
+.formResult {
+  margin-top: 70px;
+  text-align: start;
+}

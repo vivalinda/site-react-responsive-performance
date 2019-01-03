@@ -5,7 +5,6 @@ import { Button, Form, FormGroup, Input } from 'reactstrap';
 export default class Parcerias extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       template_params : {
         name: "",
@@ -14,77 +13,78 @@ export default class Parcerias extends React.Component {
         message: "",
         contato: ""
       },
-      submited: false
+      isSubmitted: false
     }
    
     this.handleData = this.handleData.bind(this);
-    this.handleName = this.handleName.bind(this);
-    this.handleInstagram = this.handleInstagram.bind(this);
-    this.handleOtherSocial = this.handleOtherSocial.bind(this);
-    this.handleMessage = this.handleMessage.bind(this);
-    this.handleContato = this.handleContato.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleName(event) {
-    this.setState( { template_params: {...this.state.template_params,  name: event.target.value} } );
+  handleChange(e) {
+    this.setState( { template_params: {...this.state.template_params,  [ e.target.name ]: e.target.value} } );
   } 
-
-  handleInstagram(event) {
-    this.setState( { template_params: {...this.state.template_params,  instagram: event.target.value} } );
-  } 
-
-  handleOtherSocial(event) {
-    this.setState( { template_params: {...this.state.template_params,  otherSocial: event.target.value} } );
-  }
-
-  handleMessage( event ) {
-    this.setState( { template_params: {...this.state.template_params,  message: event.target.value} } );
-  }
-  handleContato( event ) {
-    this.setState( { template_params: {...this.state.template_params,  contato: event.target.value} } );
-  }
 
   handleData(event) {
-    event.preventDefault()
+    event.preventDefault();
+    (function(){
+      window.emailjs.init("user_kA2kM7oBsmwwAP2BFgBsq");
+    })();
     window.emailjs.send("default_service","template_mUz5l4x1_clone", this.state.template_params);
-    this.setState( { template_params: {
-      name: "",
-      instagram: "",
-      otherSocial: "",
-      message: "",
-      contato: ""
-    }})
-    this.setState( {
-      submited: true
-    })
+    this.handleFormStatus()
   }
 
-  
+  handleFormStatus(){
+    setTimeout(() => {
+      this.setState( { 
+        isSubmitted: !this.isSubmitted
+      })
+    }, 500);
+  }
+
  render() {
-    
   return (
     <div className="parceriasContainer">
-      <h4>Interessada em ser nossa Parceira?</h4>
-      <h6>Preencha o Formulário abaixo que entraremos em contato</h6>
-      <Form>
-        <FormGroup>
-          <Input type="text"  id="nomeParceira" placeholder="Nome" value={ this.state.template_params.name } onChange={ this.handleName } />
-        </FormGroup>
-        <FormGroup>
-          <Input type="text"  id="instagramParceira" placeholder="@seuinstagram" value={ this.state.template_params.instagram } onChange={ this.handleInstagram } />
-        </FormGroup>
-        <FormGroup>
-          <Input type="text"  id="otherSocialParceira" placeholder="Outras Mídias" value={ this.state.template_params.otherSocial } onChange={ this.handleOtherSocial } />
-        </FormGroup>
-        <FormGroup>
-          <Input type="textarea" id="messageParceira" placeholder="Como essa parceria pode ser benéfica para as partes e o que você espera dela?"  value={ this.state.template_params.message } onChange={ this.handleMessage } />
-        </FormGroup>
-        <FormGroup>
-          <Input type="text" id="contatoParceira" placeholder="Contato"  value={ this.state.template_params.contato } onChange={ this.handleContato } />
-        </FormGroup>
-        <Button onClick={ this.handleData } block>Enviar</Button>
-      </Form>
+      {
+        this.state.isSubmitted 
+          ? <FormSentMsg params={ this.state.template_params } />
+          : <FormParceria params={ this.state.template_params  } onChange={ this.handleChange } onClick={ this.handleData } />
+      }
     </div>
   );
  }
+}
+
+const FormSentMsg = ( props ) => {
+  return(
+    <div  className="formMargin">
+      <h6>{ props.params.name },</h6>
+      <h6>Agradecemos o interesse em fazer uma parceria conosco</h6>
+      <p>Entraremos em contato com uma resposta</p>
+    </div>
+  )
+}
+
+const FormParceria = ( props ) => {
+  return(
+    <>
+      <h4>Interessada em ser nossa Parceira?</h4>
+      <h6>Preencha o Formulário abaixo que entraremos em contato</h6>
+      <Form>
+          <InputParceira type="text" name="name" id="nomeParceira" placeholder="Nome" value={ props.params.name } onChange={ props.onChange } />
+          <InputParceira type="text" name="instagram" id="instagramParceira" placeholder="@seuinstagram" value={ props.params.instagram} onChange={ props.onChange } />
+          <InputParceira type="text" name="otherSocial" id="otherSocialParceira" placeholder="Outras Mídias" value={ props.params.otherSocial } onChange={  props.onChange } />
+          <InputParceira type="textarea" name="message" id="messageParceira" placeholder="Como essa parceria pode ser benéfica para as partes e o que você espera dela?"  value={ props.params.message } onChange={  props.onChange } />
+          <InputParceira type="text" name="contato" id="contatoParceira" placeholder="Contato"  value={ props.params.contato } onChange={  props.onChange } />
+          <Button onClick={ props.onClick } block>Enviar</Button>
+        </Form>
+      </>
+  )
+}
+
+const InputParceira = ( props ) => {
+  return (
+    <FormGroup>
+      <Input type={ props.type }  name={ props.name }  id={ props.id } placeholder={ props.placeholder } value={ props.value } onChange={ props.onChange } />
+    </FormGroup>
+  )
 }
